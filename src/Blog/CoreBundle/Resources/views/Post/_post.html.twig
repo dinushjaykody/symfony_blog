@@ -1,0 +1,14 @@
+<article>
+    <header>
+        <h2><a href="{{ path('blog_core_post_show', { slug: post.slug }) }}"> {{ post.title }}</a></h2>
+
+        <P>
+            {{ 'post.on' | trans }} <time datetime="{{ post.createdAt | date('c')}}">{{ post.createdAt | date }}</time>
+            {{ 'by'|trans }} <a href="{{ path('blog_core_author_show', { slug: post.author.slug }) }}">{{ post.author.name }}</a>
+        </P>
+    </header>
+
+    <P>
+        {{ post.body }} &#8212; <a href="#"> {{ 'read.more' | trans }} &raquo;</a>
+    </P>
+</article>
